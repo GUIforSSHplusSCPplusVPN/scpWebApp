@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Scp app basic test</title>
+</head>
+<body>
+<center>
+<h1> Scp web app - Client to client comm test</h1>
+</center>
+<br>
+<!-- Java script first -->
+<script type="text/javascript" src="js/FABridge.js"></script>
+<script type="text/javascript" src="js/scpApp.js"> </script>
+<script type="text/javascript"> 
+    scpApp.init();
+</script>
+
+<!-- Then flash -->
+<object id="flexApp" width="0" height="0">
+<param name="flashvars" value="bridgeName=ajaxChat"/>
+<param name="flexApp" value="flash/FABridge.swf">
+<embed src="flash/FABridge.swf" width="0" height="0" flashvars="bridgeName=ajaxChat">
+</embed>
+</object>
+
+<form>
+<center>
+Enter the message to be sent to the server:<br/>
+<input type='text' id='msg'/><br/>
+<input type='button' onclick="scpApp.socketSend(document.getElementById('msg'))" value='Send message'/>
+</center>
+</form>
+</body>
+</html>
+
